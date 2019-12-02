@@ -1,0 +1,50 @@
+<!--Discord Webhook thing-->
+<!doctype html>
+<html lang=en>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Discord Webhook Message sender</h1>
+            <form>
+                <div class="input-group mp-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Webhook Username</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" id="username">
+                </div>
+                <label for="content">Message Content:</label>
+                <textarea class="form-control" placeholder="content" id="content" name="content" required></textarea>
+            </form>
+        </div>
+        <script lang='javascript'>
+            function postmsg(){
+                fetch("https://canary.discordapp.com/api/webhooks/641992992164413470/TkEaQntet90Fu_DGW0pkjSHcEvJvKG1cpc3AL-SabOJ0AvQUvBQ2yG8In3eJcnAFvm6U", {
+                      method: "POST",
+                      body: "{'content':\""+message+"\"}",
+                      headers: {
+                        "Content-Length": 21,
+                        "Content-Type": "application/json; charset=utf-8"
+                      },
+                      credentials: "same-origin"
+                    }).then(function(response) {
+                      response.status
+                      response.statusText
+                      response.headers
+                      response.url
+                      return response.text()
+                    }).catch(function(error) {
+                      error.message
+                    })
+            }
+        </script>
+    </body>
+</html>
+<!--
+var hookurl = https://canary.discordapp.com/api/webhooks/641992992164413470/TkEaQntet90Fu_DGW0pkjSHcEvJvKG1cpc3AL-SabOJ0AvQUvBQ2yG8In3eJcnAFvm6U
+var req = fetch('',{method:'post',headers:{'Content-Type': 'application/json'}, body: '{"content":"'+a+'"}'})
+-->
