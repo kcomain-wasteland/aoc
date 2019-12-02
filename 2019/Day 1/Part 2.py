@@ -12,9 +12,9 @@ while temp != '':
         remaining_fuel = fuelneed(temp)
         while fuelneed(remaining_fuel) >= 0:
             fuel_counter_upper += remaining_fuel
-            print('DEBUG: Counter:{}'.format(fuel_counter_upper))
+            #print('DEBUG: Counter:{}'.format(fuel_counter_upper))
             remaining_fuel = fuelneed(remaining_fuel)
-            print('DEBUG: Remaini:{}'.format(remaining_fuel))
+            #print('DEBUG: Remaini:{}'.format(remaining_fuel))
         fuel_counter_upper += remaining_fuel
     temp = input()
 
